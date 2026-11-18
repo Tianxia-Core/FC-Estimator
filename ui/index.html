@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- ffp: FFP-FC-ESTIMATOR-WEB frontend html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC Algebraic Build Estimator v4.2 · RASA-X-MACHINA</title>
+  <style>
+    :root {
+      --bg: #080808;
+      --panel: #111317;
+      --border: #232832;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #00f59b;
+      --cyan: #22d3ee;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.55;
+      padding: 2rem 1.25rem 4rem;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.25rem; }
+    .eyebrow { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1 { font-size: 2rem; margin: 0.35rem 0 0.5rem; }
+    .sub { color: var(--muted); max-width: 72ch; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .card h2 { font-size: 1.05rem; margin-bottom: 1rem; color: var(--cyan); }
+    label { display: block; font-size: 0.88rem; margin-bottom: 0.9rem; color: var(--text); }
+    label span { display: flex; justify-content: space-between; margin-bottom: 0.3rem; font-weight: 600; }
+    input[type="range"], input[type="number"], select {
+      width: 100%;
+      background: #0b0d10;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.45rem 0.6rem;
+    }
+    .toggle { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.75rem; cursor: pointer; }
+    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem; }
+    .kpi {
+      background: #0b0d10;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem;
+    }
+    .kpi .k-label { font-size: 0.76rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .kpi .k-val { font-size: 1.45rem; font-weight: 700; color: var(--accent); margin-top: 0.2rem; }
+    .kpi .k-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+    .formula {
+      margin-top: 1.5rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.82rem;
+      background: #0b0d10;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      color: var(--cyan);
+      overflow-x: auto;
+    }
+    footer { margin-top: 2rem; color: var(--muted); font-size: 0.84rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover, a:focus-visible { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">RASA-X-MACHINA · Sovereign Build Physics (95.0% Validated Accuracy)</p>
+      <h1>FC Algebraic Build &amp; Token-Economics Estimator (v4.2)</h1>
+      <p class="sub">Size software builds deterministically by Function-Feature Pair (FFP) count, parallel worker topology, real-world I/O latency, and Build Law 8.8× token compression—all denominated consistently in EUR (€).</p>
+    </header>
+
+    <section class="grid" aria-label="Interactive FC Build Calculator">
+      <div class="card">
+        <h2>1. Workload &amp; Topology Inputs</h2>
+        <label for="fcInput">
+          <span>Function / FFP Count (FC) <strong id="fcVal">250</strong></span>
+          <input id="fcInput" type="range" min="1" max="2000" value="250" />
+        </label>
+        <label for="paInput">
+          <span>Parallel Autonomous Workers (PA) <strong id="paVal">15</strong></span>
+          <input id="paInput" type="range" min="1" max="64" value="15" />
+        </label>
+        <label for="cfInput">
+          <span>Architectural Complexity (CF) <strong id="cfVal">2.5</strong></span>
+          <input id="cfInput" type="range" min="1.0" max="4.0" step="0.1" value="2.5" />
+        </label>
+        <label for="ioInput">
+          <span>File I/O Operations <strong id="ioVal">100</strong></span>
+          <input id="ioInput" type="range" min="0" max="1000" step="10" value="100" />
+        </label>
+        <label for="netInput">
+          <span>External Network / API Calls <strong id="netVal">20</strong></span>
+          <input id="netInput" type="range" min="0" max="300" step="5" value="20" />
+        </label>
+        <label class="toggle" for="blToggle">
+          <input id="blToggle" type="checkbox" checked />
+          <span>Enable <strong>Build Law</strong> (SLECO-SO++ 1.5× velocity &amp; 8.8× Vāk System-0 token compression)</span>
+        </label>
+      </div>
+
+      <div class="card" aria-live="polite">
+        <h2>2. Calibrated Build &amp; EUR Budget Projection</h2>
+        <div class="kpi-grid">
+          <div class="kpi">
+            <div class="k-label">Active Build Time</div>
+            <div class="k-val" id="outMinutes">13.30 min</div>
+            <div class="k-sub" id="outSpeedup">vs 337.5h human baseline</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">Bounded Services (&le; 8 FFPs)</div>
+            <div class="k-val" id="outServices">32 units</div>
+            <div class="k-sub">Prevents context-window collapse</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">Estimated Token Footprint</div>
+            <div class="k-val" id="outTokens">411,932</div>
+            <div class="k-sub" id="outRawTokens">vs 3,625,000 uncompressed</div>
+          </div>
+          <div class="kpi">
+            <div class="k-label">API Spend (EUR)</div>
+            <div class="k-val" id="outEUR">€1.89</div>
+            <div class="k-sub" id="outSavedEUR">Net saved: €14.78 (€16.68 raw)</div>
+          </div>
+        </div>
+        <div class="formula">
+          ActiveSeconds = (FC × 3600 × CF) / (0.27 × PA × 10.0 × 2.5 × 3.0 × SLECO × 2.0) + (IO × 0.5s) + (Net × 3.0s)
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Open-Source MIT · <a href="https://github.com/Tianxia-Core/FC-Estimator">Tianxia-Core/FC-Estimator</a></span>
+      <span>Companion Stack: <a href="https://github.com/Tianxia-Core/Build-Law">Build Law</a> · <a href="https://github.com/Tianxia-Core/nimbus2">nimbus²</a> · <a href="https://github.com/Tianxia-Core/Jivascriptocle">Jivascriptocle</a> · <a href="https://rasaxmachina.com">rasaxmachina.com</a></span>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const ids = ["fcInput", "paInput", "cfInput", "ioInput", "netInput", "blToggle"];
+      const els = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
+      function render() {
+        const fc = Number(els.fcInput.value);
+        const pa = Number(els.paInput.value);
+        const cf = Number(els.cfInput.value);
+        const io = Number(els.ioInput.value);
+        const net = Number(els.netInput.value);
+        const bl = els.blToggle.checked;
+
+        document.getElementById("fcVal").textContent = String(fc);
+        document.getElementById("paVal").textContent = String(pa);
+        document.getElementById("cfVal").textContent = cf.toFixed(1);
+        document.getElementById("ioVal").textContent = String(io);
+        document.getElementById("netVal").textContent = String(net);
+
+        const sleco = bl ? 1.5 : 1.0;
+        const cmp = bl ? 8.8 : 1.0;
+        const denom = 0.27 * pa * 10.0 * 2.5 * 3.0 * sleco * 2.0;
+        const sec = (fc * 3600 * cf) / denom + io * 0.5 + net * 3.0;
+        const humanH = fc * 1.35;
+        const speedup = (humanH * 3600) / Math.max(1, sec);
+        const rawTok = Math.round(fc * 14500);
+        const blTok = Math.round(rawTok / cmp);
+        const rawEUR = (rawTok / 1e6) * 4.6;
+        const blEUR = (blTok / 1e6) * 4.6;
+        const services = Math.max(1, Math.ceil(fc / 8));
+
+        document.getElementById("outMinutes").textContent = (sec / 60).toFixed(2) + " min";
+        document.getElementById("outSpeedup").textContent = "vs " + humanH.toFixed(1) + "h human (" + speedup.toFixed(1) + "× faster)";
+        document.getElementById("outServices").textContent = services + (services === 1 ? " unit" : " units");
+        document.getElementById("outTokens").textContent = blTok.toLocaleString("en-IE");
+        document.getElementById("outRawTokens").textContent = "vs " + rawTok.toLocaleString("en-IE") + " raw (" + cmp.toFixed(1) + "×)";
+        document.getElementById("outEUR").textContent = "€" + blEUR.toFixed(2);
+        document.getElementById("outSavedEUR").textContent = "Net saved: €" + (rawEUR - blEUR).toFixed(2) + " (€" + rawEUR.toFixed(2) + " raw)";
+      }
+      ids.forEach((id) => els[id].addEventListener("input", render));
+      render();
+    })();
+  </script>
+</body>
+</html>

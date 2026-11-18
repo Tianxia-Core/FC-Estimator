@@ -1,0 +1,19 @@
+# ffp: FFP-FC-CI content-pipeline yaml
+name: FC-Estimator CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+      - run: go test -v ./...
+      - run: CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o fc-estimator ./cmd/fc-estimator
+      - run: ./fc-estimator calc --fc 250 --build-law --json

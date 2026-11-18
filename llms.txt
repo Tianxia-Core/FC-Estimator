@@ -1,0 +1,7 @@
+# FC-Estimator (v4.2.0) — Calibrated Function-Count Algebraic Build & Token-Economics Engine (MIT)
+
+> Open-source pre-build software sizing CLI, MCP server, Claude/Cursor skill, and interactive web calculator by Collins Takem (RASA-X-MACHINA). Predicts autonomous build wall-clock minutes, <=8-FFP microservice topology, and Build Law 8.8x EUR token savings at 95.0% validated accuracy.
+
+- Repository: https://github.com/Tianxia-Core/FC-Estimator
+- Companion Constitution: https://github.com/Tianxia-Core/Build-Law
+- Companion Build Manager: https://github.com/Tianxia-Core/nimbus2
